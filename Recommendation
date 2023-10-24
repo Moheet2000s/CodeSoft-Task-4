@@ -1,0 +1,35 @@
+import pandas as pd
+
+# Sample movie dataset
+data = {
+    'Title': ['JAWAAN', 'SPECIAL 26', 'WAR', 'HERA PHERI', 'SANJU'],
+    'Genre': ['Action', 'Drama', 'Action', 'Comedy', 'Drama'],
+}
+
+movies_df = pd.DataFrame(data)
+
+# Function to recommend movies based on user's preferred genre
+def recommend_movies(user_preference, movies_df):
+    recommended_movies = movies_df[movies_df['Genre'] == user_preference]
+    return recommended_movies['Title']
+
+# Examplec1:
+user_preference = 'Drama'
+recommended_movies = recommend_movies(user_preference, movies_df)
+
+print(f"Recommended {user_preference} movies:")
+print(recommended_movies)
+
+# Example 2:
+user_preference = 'Action'
+recommended_movies = recommend_movies(user_preference, movies_df)
+
+print(f"Recommended {user_preference} movies:")
+print(recommended_movies)
+
+# Example 3:
+user_preference = 'Comedy'
+recommended_movies = recommend_movies(user_preference, movies_df)
+
+print(f"Recommended {user_preference} movies:")
+print(recommended_movies)
